@@ -1,0 +1,1 @@
+No Content: https://quizfev.com/games/speedsquarerunner/sw.js

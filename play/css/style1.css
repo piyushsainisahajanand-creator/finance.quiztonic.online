@@ -1,0 +1,318 @@
+/* ===== GAME AREA ===== */
+
+.gameArea {
+    height: 620px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.01)
+    );
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.35),
+    inset 0 0 40px rgba(255,255,255,0.02);
+
+    transition: 0.4s;
+}
+
+/* HOVER EFFECT */
+
+.gameArea:hover{
+    transform: translateY(-4px);
+    box-shadow:
+    0 18px 50px rgba(0,0,0,0.45),
+    0 0 25px rgba(184,93,245,0.15);
+}
+
+/* GAME IMAGE */
+
+.bg_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transform: scale(1.03);
+
+    filter: blur(3px) brightness(0.6);
+
+    transition: 0.5s;
+}
+
+.gameArea:hover .bg_img{
+    transform: scale(1.06);
+    filter: blur(2px) brightness(0.7);
+}
+
+/* DARK OVERLAY */
+
+.gameArea::after{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.45)
+    );
+}
+
+/* ===== PLAY BUTTON ===== */
+/* a TAG KE BAAD JO FIRST P HAI USKE UPAR */
+
+.container > a + p::before{
+
+    content:"🎮 HOW TO PLAY";
+
+    display:block;
+
+    width:fit-content;
+
+    margin:0 auto 30px auto;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#fff;
+
+    letter-spacing:1px;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.15),
+    0 0 25px rgba(168,85,247,0.4);
+}
+
+.container > a + p::after{
+
+    content:'';
+
+    display:block;
+
+    width:90px;
+    height:4px;
+
+    margin:14px auto 0 auto;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff4d6d,
+        #9333ea
+    );
+}
+.PlayBtn {
+
+    position: absolute;
+    z-index: 5;
+
+    padding: 18px 42px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #fff;
+
+    border-radius: 60px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #a855f7
+    );
+
+    box-shadow:
+    0 10px 30px rgba(168,85,247,0.35);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.35s;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    letter-spacing: 0.5px;
+}
+
+.PlayBtn:hover{
+
+    transform: scale(1.08);
+
+    box-shadow:
+    0 15px 40px rgba(168,85,247,0.5);
+
+    background: linear-gradient(
+        135deg,
+        #ff5d7d,
+        #9333ea
+    );
+}
+
+/* ===== TITLE ===== */
+
+.playtxt {
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 2.2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    color: #fff;
+
+    letter-spacing: 0.5px;
+}
+
+/* ===== DESCRIPTION ===== */
+
+.container p {
+
+    margin-top: 35px;
+
+    padding: 28px 35px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    line-height: 2;
+
+    color: #e4e4e4;
+
+    font-size: 16px;
+
+    box-shadow:
+    inset 0 0 25px rgba(255,255,255,0.02);
+}
+
+/* ===== HOW TO PLAY BOX ===== */
+
+.container div ul {
+
+    margin-top: 20px;
+
+    background: rgba(255,255,255,0.04);
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    list-style: none;
+}
+
+/* LIST ITEMS */
+
+.container div ul li {
+
+    position: relative;
+
+    padding-left: 34px;
+
+    margin-bottom: 18px;
+
+    color: #ececec;
+
+    line-height: 1.8;
+}
+
+/* CUSTOM BULLETS */
+
+.container div ul li::before{
+
+    content:'✓';
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:12px;
+    font-weight:bold;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d6d,
+        #9333ea
+    );
+}
+
+/* SECTION TITLE */
+
+.container div p{
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:none !important;
+
+    border:none !important;
+
+    padding:0 !important;
+
+    box-shadow:none !important;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .gameArea{
+        height:300px;
+        border-radius:18px;
+    }
+
+    .PlayBtn{
+        font-size:16px;
+        padding:12px 28px;
+    }
+
+    .playtxt{
+        font-size:1.5rem;
+    }
+
+    .container p{
+        padding:22px;
+        font-size:15px;
+        line-height:1.9;
+    }
+
+    .container div ul{
+        padding:22px;
+    }
+
+}

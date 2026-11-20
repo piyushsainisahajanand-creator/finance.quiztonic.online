@@ -1,0 +1,1 @@
+No Content: https://quizfev.com/games/firealarmrequers/sw.js
